@@ -1,0 +1,16 @@
+{
+  "name": "grill-me-multiple-choice",
+  "owner": {
+    "name": "Guilherme Cardoso",
+    "url": "https://github.com/guilherme-luna"
+  },
+  "plugins": [
+    {
+      "name": "grill-me-multiple-choice",
+      "source": "./",
+      "description": "A relentless interview that stress-tests your plan, asked as one-click multiple-choice rounds.",
+      "version": "1.0.0",
+      "category": "productivity"
+    }
+  ]
+}

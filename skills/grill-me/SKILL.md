@@ -4,4 +4,4 @@ description: A relentless interview to sharpen a plan or design, asked as multip
 disable-model-invocation: true
 ---
 
-Call the Skill tool with "grilling".
+Call the Skill tool with "grilling" (or "grill-me-multiple-choice:grilling" when installed as a plugin).
