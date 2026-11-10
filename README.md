@@ -12,7 +12,9 @@
 
 A [Claude Code](https://claude.com/claude-code) skill that interviews you relentlessly about a plan until every decision is settled — but instead of a wall of text, every question comes as a **multiple-choice dialog** you can answer with one click.
 
-Based on [`grill-me`](https://github.com/mattpocock/skills/tree/main/skills/productivity/grill-me) by [Matt Pocock](https://github.com/mattpocock), MIT licensed.
+**The easiest way to get grill-me with multiple-choice questions: one install command, no config to edit.**
+
+Based on [`grill-me`](https://github.com/mattpocock/skills/tree/main/skills/productivity/grill-me) by [Matt Pocock](https://github.com/mattpocock), MIT licensed. Clickable questions have been requested several times upstream ([#798](https://github.com/mattpocock/skills/issues/798), [#643](https://github.com/mattpocock/skills/issues/643)), but they depend on the harness, so they stay out of the official skill. This repo packages them as a ready-to-install plugin.
 
 ## What's different
 
@@ -28,6 +30,14 @@ The original skill asks each round as plain text, with a recommended answer you 
 | Language | — | Follows the user's language |
 
 Everything else is unchanged: the **design tree**, the **frontier** of questions that can be asked now, Claude looking up facts on its own, and nothing being done until you confirm a shared understanding.
+
+### Why not just a `CLAUDE.md` snippet?
+
+You can get clickable rounds by adding a few lines to your `CLAUDE.md` (see [#798](https://github.com/mattpocock/skills/issues/798)). That works well if you're comfortable editing config. This plugin is for when you'd rather:
+
+- install it with **one command** and remove it just as easily;
+- keep your `CLAUDE.md` clean and shared projects untouched;
+- get the extras: questions in your language, numbering that continues across rounds, and a trade-off under every option.
 
 ## Install
 
@@ -101,7 +111,9 @@ skills/
 
 Uma skill do [Claude Code](https://claude.com/claude-code) que te entrevista sem parar sobre um plano até todas as decisões estarem resolvidas, mas em vez de um bloco de texto, cada pergunta vem numa **caixa de múltipla escolha** que você responde com um clique.
 
-Baseada na [`grill-me`](https://github.com/mattpocock/skills/tree/main/skills/productivity/grill-me) do [Matt Pocock](https://github.com/mattpocock), com licença MIT.
+**O jeito mais fácil de ter o grill-me com perguntas de múltipla escolha: um comando para instalar, sem mexer em configuração.**
+
+Baseada na [`grill-me`](https://github.com/mattpocock/skills/tree/main/skills/productivity/grill-me) do [Matt Pocock](https://github.com/mattpocock), com licença MIT. Perguntas clicáveis já foram pedidas várias vezes no repositório original ([#798](https://github.com/mattpocock/skills/issues/798), [#643](https://github.com/mattpocock/skills/issues/643)), mas como dependem da ferramenta usada, ficam fora da skill oficial. Este repositório entrega isso como um plugin pronto para instalar.
 
 ### O que muda
 
@@ -115,6 +127,14 @@ Na original, cada rodada vem como texto no chat, com uma resposta recomendada qu
 - As perguntas vêm no idioma em que você escreve.
 
 O resto é igual: a **árvore de decisões**, a **fronteira** de perguntas que já dá para fazer, o Claude pesquisando os fatos sozinho, e nada é executado até você confirmar que vocês chegaram a um entendimento comum.
+
+### Por que não só um trecho no `CLAUDE.md`?
+
+Dá para ter as rodadas clicáveis colando algumas linhas no seu `CLAUDE.md` (veja o [#798](https://github.com/mattpocock/skills/issues/798)). Funciona bem se você não se importa de editar configuração. Este plugin é para quando você prefere:
+
+- instalar com **um comando** e remover com a mesma facilidade;
+- deixar o seu `CLAUDE.md` limpo e não mexer em projetos compartilhados;
+- ter os extras: perguntas no seu idioma, numeração que continua entre as rodadas e um prós e contras em cada opção.
 
 ### Instalação
 
