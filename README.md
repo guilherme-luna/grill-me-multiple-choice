@@ -4,6 +4,8 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/guilherme-luna/grill-me-multiple-choice?style=social)](https://github.com/guilherme-luna/grill-me-multiple-choice/stargazers)
 
+![grill-me multiple choice](docs/social-preview.png)
+
 <!-- DEMO: put a GIF of a multiple-choice round here, e.g. ![demo](docs/demo.gif) -->
 
 🇧🇷 **[Leia em português](#-português)**
