@@ -6,8 +6,6 @@
 
 ![grill-me multiple choice](docs/social-preview.png)
 
-<!-- DEMO: put a GIF of a multiple-choice round here, e.g. ![demo](docs/demo.gif) -->
-
 🇧🇷 **[Leia em português](#-português)**
 
 A [Claude Code](https://claude.com/claude-code) skill that interviews you relentlessly about a plan until every decision is settled — but instead of a wall of text, every question comes as a **multiple-choice dialog** you can answer with one click.
