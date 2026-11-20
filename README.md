@@ -8,7 +8,9 @@
 
 🇧🇷 **[Leia em português](#-português)**
 
-A [Claude Code](https://claude.com/claude-code) skill that interviews you relentlessly about a plan until every decision is settled — but instead of a wall of text, every question comes as a **multiple-choice dialog** you can answer with one click.
+A Claude Code plugin that interviews you about a plan, one clickable multiple-choice round at a time.
+
+**Deliberately different from the original.** It is based on the `grill-me` skill by Matt Pocock (MIT), but every round uses Claude Code's `AskUserQuestion` tool, so it works in Claude Code only. The original keeps questions as plain text so it runs in any harness. This is a choice, not an oversight.
 
 **The easiest way to get grill-me with multiple-choice questions: one install command, no config to edit.**
 
@@ -179,4 +181,4 @@ Reinicie o Claude Code se o `/grill-me` não aparecer.
 
 ## License
 
-[MIT](LICENSE). Original skills © Matt Pocock; multiple-choice changes © Guilherme Cardoso.
+[MIT](LICENSE). Original skills © Matt Pocock; multiple-choice changes © Guilherme Luna.
