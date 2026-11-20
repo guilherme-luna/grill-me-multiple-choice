@@ -10,34 +10,34 @@
 
 A Claude Code plugin that interviews you about a plan, one clickable multiple-choice round at a time.
 
-**Deliberately different from the original.** It is based on the `grill-me` skill by Matt Pocock (MIT), but every round uses Claude Code's `AskUserQuestion` tool, so it works in Claude Code only. The original keeps questions as plain text so it runs in any harness. This is a choice, not an oversight.
+It is based on the `grill-me` skill by Matt Pocock (MIT), but every round uses Claude Code's `AskUserQuestion` tool, so it works in Claude Code only. The original keeps questions as plain text so it runs in any harness. The divergence is deliberate.
 
-**The easiest way to get grill-me with multiple-choice questions: one install command, no config to edit.**
+Install is one command, with no config to edit.
 
-Based on [`grill-me`](https://github.com/mattpocock/skills/tree/main/skills/productivity/grill-me) by [Matt Pocock](https://github.com/mattpocock), MIT licensed. Clickable questions have been requested several times upstream ([#798](https://github.com/mattpocock/skills/issues/798), [#643](https://github.com/mattpocock/skills/issues/643)), but they depend on the harness, so they stay out of the official skill. This repo packages them as a ready-to-install plugin.
+Clickable questions have been requested several times upstream ([#798](https://github.com/mattpocock/skills/issues/798), [#643](https://github.com/mattpocock/skills/issues/643)), but they depend on the harness, so they stay out of the official skill. This repo packages them as a ready-to-install plugin. The original is [`grill-me`](https://github.com/mattpocock/skills/tree/main/skills/productivity/grill-me) by [Matt Pocock](https://github.com/mattpocock), MIT licensed.
 
 ## What's different
 
-The original skill asks each round as plain text, with a recommended answer you accept by typing "yes". This version makes every round use Claude Code's **AskUserQuestion** tool:
+The original skill asks each round as plain text, with a recommended answer you accept by typing "yes". This version makes every round use Claude Code's `AskUserQuestion` tool:
 
 | | Original | This version |
 |---|---|---|
 | How questions appear | Text in the chat | Selection dialog |
-| Answer options | Free text | **a, b, c** + **d (Other)** for your own answer |
+| Answer options | Free text | a, b, c, plus d (Other) for your own answer |
 | Recommendation | `➡️` line after the question | First option, marked `(Recommended)` |
 | Trade-offs | Inline in the question | Short description under each option |
 | Numbering | Per round | Continues across rounds (Q1…Q12…) |
-| Language | — | Follows the user's language |
+| Language | Not covered | Follows the user's language |
 
-Everything else is unchanged: the **design tree**, the **frontier** of questions that can be asked now, Claude looking up facts on its own, and nothing being done until you confirm a shared understanding.
+The rest is unchanged: the design tree, the frontier of questions that can be asked now, Claude looking up facts on its own, and nothing being done until you confirm a shared understanding.
 
 ### Why not just a `CLAUDE.md` snippet?
 
 You can get clickable rounds by adding a few lines to your `CLAUDE.md` (see [#798](https://github.com/mattpocock/skills/issues/798)). That works well if you're comfortable editing config. This plugin is for when you'd rather:
 
-- install it with **one command** and remove it just as easily;
+- install it with one command and remove it just as easily;
 - keep your `CLAUDE.md` clean and shared projects untouched;
-- get the extras: questions in your language, numbering that continues across rounds, and a trade-off under every option.
+- get questions in your language, numbering that continues across rounds, and a trade-off under every option.
 
 ## Install
 
@@ -76,7 +76,7 @@ Copy-Item -Recurse -Force grill-me-multiple-choice\skills\* "$HOME\.claude\skill
 
 Restart Claude Code if `/grill-me` doesn't show up.
 
-> ⚠️ If you already have Matt Pocock's `grill-me`/`grilling` installed, this replaces them.
+> If you already have Matt Pocock's `grill-me`/`grilling` installed, this replaces them.
 
 ## Usage
 
@@ -96,7 +96,7 @@ Q5 – Without an API, where do the "received" messages come from?
 
 See a full example session in [docs/examples/serverless-file-drop.md](docs/examples/serverless-file-drop.md).
 
-⭐ **If this helped you think through a plan, a star helps other people find it.**
+If this helped you think through a plan, a star on the repo helps other people find it.
 
 ## Files
 
@@ -111,36 +111,38 @@ skills/
 
 ## 🇧🇷 Português
 
-Uma skill do [Claude Code](https://claude.com/claude-code) que te entrevista sem parar sobre um plano até todas as decisões estarem resolvidas, mas em vez de um bloco de texto, cada pergunta vem numa **caixa de múltipla escolha** que você responde com um clique.
+Um plugin do [Claude Code](https://claude.com/claude-code) que entrevista você sobre um plano, uma rodada de múltipla escolha clicável por vez.
 
-**O jeito mais fácil de ter o grill-me com perguntas de múltipla escolha: um comando para instalar, sem mexer em configuração.**
+Ele se baseia na skill `grill-me` do Matt Pocock (MIT), mas toda rodada usa a ferramenta `AskUserQuestion` do Claude Code, então só funciona no Claude Code. O original mantém as perguntas em texto para rodar em qualquer ambiente. A diferença é proposital.
 
-Baseada na [`grill-me`](https://github.com/mattpocock/skills/tree/main/skills/productivity/grill-me) do [Matt Pocock](https://github.com/mattpocock), com licença MIT. Perguntas clicáveis já foram pedidas várias vezes no repositório original ([#798](https://github.com/mattpocock/skills/issues/798), [#643](https://github.com/mattpocock/skills/issues/643)), mas como dependem da ferramenta usada, ficam fora da skill oficial. Este repositório entrega isso como um plugin pronto para instalar.
+É a forma mais simples de ter o grill-me com perguntas de múltipla escolha: um comando para instalar, sem mexer em configuração.
+
+Baseada na [`grill-me`](https://github.com/mattpocock/skills/tree/main/skills/productivity/grill-me) do [Matt Pocock](https://github.com/mattpocock), com licença MIT. Perguntas clicáveis já foram pedidas várias vezes no repositório original ([#798](https://github.com/mattpocock/skills/issues/798), [#643](https://github.com/mattpocock/skills/issues/643)), mas dependem da ferramenta usada e por isso ficam fora da skill oficial. Este repositório entrega isso como um plugin pronto para instalar.
 
 ### O que muda
 
-Na original, cada rodada vem como texto no chat, com uma resposta recomendada que você aceita digitando "sim". Nesta versão, toda rodada usa a ferramenta **AskUserQuestion** do Claude Code:
+Na original, cada rodada vem como texto no chat, com uma resposta recomendada que você aceita digitando "sim". Nesta versão, toda rodada usa a ferramenta AskUserQuestion do Claude Code:
 
-- As perguntas aparecem numa **caixa de seleção**, não como texto solto.
-- Cada pergunta tem as opções **a, b e c**, mais a **(d) "Other"**, onde você escreve sua própria resposta.
-- A opção recomendada vem **sempre primeiro**, marcada com "(Recomendado)".
+- As perguntas aparecem numa caixa de seleção, não como texto solto.
+- Cada pergunta tem as opções a, b e c, mais a (d) "Other", onde você escreve sua própria resposta.
+- A opção recomendada vem sempre primeiro, marcada com "(Recomendado)".
 - Cada opção tem uma explicação curta das vantagens e desvantagens.
 - A numeração continua entre as rodadas (Q1…Q12…).
 - As perguntas vêm no idioma em que você escreve.
 
-O resto é igual: a **árvore de decisões**, a **fronteira** de perguntas que já dá para fazer, o Claude pesquisando os fatos sozinho, e nada é executado até você confirmar que vocês chegaram a um entendimento comum.
+O resto é igual: a árvore de decisões, a fronteira de perguntas que já dá para fazer e o Claude pesquisando os fatos sozinho. Nada é executado até você confirmar que chegaram a um entendimento comum.
 
 ### Por que não só um trecho no `CLAUDE.md`?
 
-Dá para ter as rodadas clicáveis colando algumas linhas no seu `CLAUDE.md` (veja o [#798](https://github.com/mattpocock/skills/issues/798)). Funciona bem se você não se importa de editar configuração. Este plugin é para quando você prefere:
+Dá para ter as rodadas clicáveis colando algumas linhas no seu `CLAUDE.md` (veja o [#798](https://github.com/mattpocock/skills/issues/798)). Funciona bem se editar configuração não te incomoda. Este plugin serve para quem prefere:
 
-- instalar com **um comando** e remover com a mesma facilidade;
-- deixar o seu `CLAUDE.md` limpo e não mexer em projetos compartilhados;
-- ter os extras: perguntas no seu idioma, numeração que continua entre as rodadas e um prós e contras em cada opção.
+- instalar com um comando e remover com a mesma facilidade;
+- deixar o `CLAUDE.md` limpo e não mexer em projetos compartilhados;
+- ter os extras: perguntas no seu idioma, numeração que continua entre as rodadas e prós e contras em cada opção.
 
 ### Instalação
 
-**Como plugin (recomendado)**, dentro do Claude Code:
+Como plugin (recomendado), dentro do Claude Code:
 
 ```
 /plugin install grill-me-multiple-choice --marketplace guilherme-luna/grill-me-multiple-choice
@@ -153,7 +155,7 @@ Em versões mais antigas do Claude Code, adicione o marketplace antes:
 /plugin install grill-me-multiple-choice@grill-me-multiple-choice
 ```
 
-**Manualmente**, copie as duas skills para a sua pasta de skills (a `grill-me` é só um atalho que chama a `grilling`).
+Para instalar manualmente, copie as duas skills para a sua pasta de skills (a `grill-me` é só um atalho que chama a `grilling`).
 
 macOS / Linux:
 
@@ -171,7 +173,7 @@ Copy-Item -Recurse -Force grill-me-multiple-choice\skills\* "$HOME\.claude\skill
 
 Reinicie o Claude Code se o `/grill-me` não aparecer.
 
-> ⚠️ Se você já tem a `grill-me`/`grilling` do Matt Pocock instalada, esta versão substitui a dele.
+> Se você já tem a `grill-me`/`grilling` do Matt Pocock instalada, esta versão substitui a dele.
 
 ### Uso
 
@@ -179,7 +181,7 @@ Reinicie o Claude Code se o `/grill-me` não aparecer.
 /grill-me o plano do meu app de mensagens
 ```
 
-⭐ **Se te ajudou a pensar melhor num plano, deixa uma estrela: isso ajuda outras pessoas a encontrarem o projeto.**
+Se a skill ajudou você a pensar melhor num plano, deixar uma estrela no repositório ajuda outras pessoas a encontrarem o projeto.
 
 ## License
 

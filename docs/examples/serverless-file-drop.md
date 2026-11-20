@@ -1,6 +1,6 @@
 # Example: planning a serverless file drop
 
-This is an illustrative session, not a recorded transcript. It shows the format: numbered questions, three options with the recommended one first, and an "Other" field. The answers were picked to show how the rounds build on each other.
+This is an illustrative session, not a recorded transcript. It shows the format: numbered questions, three options with the recommended one first, and an "Other" field. I picked the answers to show how the rounds build on each other.
 
 Prompt:
 
