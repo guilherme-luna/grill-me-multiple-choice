@@ -94,6 +94,8 @@ Q5 – Without an API, where do the "received" messages come from?
   (d) Other: ____________
 ```
 
+See a full example session in [docs/examples/serverless-file-drop.md](docs/examples/serverless-file-drop.md).
+
 ⭐ **If this helped you think through a plan, a star helps other people find it.**
 
 ## Files
