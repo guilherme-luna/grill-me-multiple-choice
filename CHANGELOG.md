@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- The README has a Spanish section, and a standalone `README.pt-BR.md`.
+- A GitHub Actions workflow checks that the manifests and the changelog agree on the version.
+- Issue and pull request templates.
+
 ## 1.1.0 (2026-11-19)
 
 - The `grill-me` shortcut falls back to reading `skills/grilling/SKILL.md` when the Skill tool is unavailable or the call fails.
