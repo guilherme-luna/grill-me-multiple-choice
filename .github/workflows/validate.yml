@@ -1,0 +1,38 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Manifests are valid JSON and share one version
+        run: |
+          jq empty .claude-plugin/plugin.json .claude-plugin/marketplace.json
+          plugin=$(jq -r .version .claude-plugin/plugin.json)
+          market=$(jq -r '.plugins[0].version' .claude-plugin/marketplace.json)
+          echo "plugin.json=$plugin marketplace.json=$market"
+          test "$plugin" = "$market"
+
+      - name: Latest CHANGELOG entry matches the plugin version
+        run: |
+          plugin=$(jq -r .version .claude-plugin/plugin.json)
+          grep -m1 -E '^## [0-9]' CHANGELOG.md | grep -q "^## $plugin " \
+            || { echo "CHANGELOG.md top entry is not $plugin"; exit 1; }
+
+      - name: Each skill has frontmatter with a matching name
+        run: |
+          for f in skills/*/SKILL.md; do
+            dir=$(basename "$(dirname "$f")")
+            test "$(sed -n 1p "$f")" = "---" || { echo "$f: no frontmatter"; exit 1; }
+            grep -q "^name: $dir$" "$f" || { echo "$f: name does not match folder $dir"; exit 1; }
+            grep -q '^description: ' "$f" || { echo "$f: no description"; exit 1; }
+          done
