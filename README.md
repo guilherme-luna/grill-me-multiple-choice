@@ -6,7 +6,7 @@
 
 ![grill-me multiple choice](docs/social-preview.png)
 
-🇧🇷 **[Leia em português](#-português)**
+🇧🇷 **[Leia em português](#-português)** · 🇪🇸 **[Leer en español](#-español)**
 
 A Claude Code plugin that interviews you about a plan, one clickable multiple-choice round at a time.
 
@@ -182,6 +182,82 @@ Reinicie o Claude Code se o `/grill-me` não aparecer.
 ```
 
 Se a skill ajudou você a pensar melhor num plano, deixar uma estrela no repositório ajuda outras pessoas a encontrarem o projeto.
+
+---
+
+## 🇪🇸 Español
+
+Un plugin de [Claude Code](https://claude.com/claude-code) que te entrevista sobre un plan, una ronda de selección múltiple con clic cada vez.
+
+Se basa en la skill `grill-me` de Matt Pocock (MIT), pero cada ronda usa la herramienta `AskUserQuestion` de Claude Code, así que solo funciona en Claude Code. El original mantiene las preguntas como texto para correr en cualquier entorno. La diferencia es intencional.
+
+Es la forma más simple de tener grill-me con preguntas de selección múltiple: un comando para instalar, sin editar configuración.
+
+Basada en [`grill-me`](https://github.com/mattpocock/skills/tree/main/skills/productivity/grill-me) de [Matt Pocock](https://github.com/mattpocock), con licencia MIT. Las preguntas con clic se han pedido varias veces en el repositorio original ([#798](https://github.com/mattpocock/skills/issues/798), [#643](https://github.com/mattpocock/skills/issues/643)), pero dependen de la herramienta que se use y por eso quedan fuera de la skill oficial. Este repositorio las entrega como un plugin listo para instalar.
+
+### Qué cambia
+
+En la original, cada ronda aparece como texto en el chat, con una respuesta recomendada que aceptas escribiendo "sí". En esta versión, cada ronda usa la herramienta AskUserQuestion de Claude Code:
+
+- Las preguntas aparecen en un cuadro de selección, no como texto suelto.
+- Cada pregunta tiene las opciones a, b y c, más la (d) "Other", donde escribes tu propia respuesta.
+- La opción recomendada va siempre primero, marcada con "(Recomendado)".
+- Cada opción tiene una explicación breve de sus ventajas y desventajas.
+- La numeración continúa entre rondas (Q1…Q12…).
+- Las preguntas llegan en el idioma en que escribes.
+
+El resto no cambia: el árbol de decisiones, la frontera de preguntas que ya se pueden hacer y Claude investigando los datos por su cuenta. No se ejecuta nada hasta que confirmes que han llegado a un entendimiento común.
+
+### ¿Por qué no solo un fragmento en `CLAUDE.md`?
+
+Se pueden tener rondas con clic pegando unas líneas en tu `CLAUDE.md` (ver [#798](https://github.com/mattpocock/skills/issues/798)). Funciona bien si editar configuración no te molesta. Este plugin sirve para quien prefiere:
+
+- instalarlo con un comando y quitarlo con la misma facilidad;
+- mantener limpio el `CLAUDE.md` y no tocar los proyectos compartidos;
+- tener los extras: preguntas en tu idioma, numeración que continúa entre rondas y ventajas y desventajas en cada opción.
+
+### Instalación
+
+Como plugin (recomendado), dentro de Claude Code:
+
+```
+/plugin install grill-me-multiple-choice --marketplace guilherme-luna/grill-me-multiple-choice
+```
+
+En versiones más antiguas de Claude Code, añade primero el marketplace:
+
+```
+/plugin marketplace add guilherme-luna/grill-me-multiple-choice
+/plugin install grill-me-multiple-choice@grill-me-multiple-choice
+```
+
+Para instalarlo manualmente, copia las dos skills a tu carpeta de skills (`grill-me` es solo un atajo que llama a `grilling`).
+
+macOS / Linux:
+
+```bash
+git clone https://github.com/guilherme-luna/grill-me-multiple-choice.git
+cp -r grill-me-multiple-choice/skills/* ~/.claude/skills/
+```
+
+Windows (PowerShell):
+
+```powershell
+git clone https://github.com/guilherme-luna/grill-me-multiple-choice.git
+Copy-Item -Recurse -Force grill-me-multiple-choice\skills\* "$HOME\.claude\skills\"
+```
+
+Reinicia Claude Code si `/grill-me` no aparece.
+
+> Si ya tienes instaladas la `grill-me`/`grilling` de Matt Pocock, esta versión las reemplaza.
+
+### Uso
+
+```
+/grill-me el plan de mi app de mensajería
+```
+
+Si la skill te ayudó a pensar mejor un plan, dejar una estrella en el repositorio ayuda a que otras personas encuentren el proyecto.
 
 ## License
 
