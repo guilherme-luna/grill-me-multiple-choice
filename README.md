@@ -6,7 +6,7 @@
 
 ![grill-me multiple choice](docs/social-preview.png)
 
-🇧🇷 **[Leia em português](#-português)** · 🇪🇸 **[Leer en español](#-español)**
+🇧🇷 **[Leia em português](README.pt-BR.md)** (ou [nesta página](#-português)) · 🇪🇸 **[Leer en español](#-español)**
 
 A Claude Code plugin that interviews you about a plan, one clickable multiple-choice round at a time.
 
